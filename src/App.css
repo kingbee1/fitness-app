@@ -1,4 +1,4 @@
-/* body {
+body {
     font-family: 'Josefin Sans';
     background-color: #FFFAFB;
   }
@@ -52,16 +52,24 @@
     height: 742px;
   }
   
-  .hero-banner-img {
+  /* .hero-banner-img {
     position: absolute;
-    right: 40px;
+    left: 40px;
     top: 0px;
     width: 700px;
     height: 900px;
     margin-top: -330px;
-  
+  } */
+  .hero-banner-img {
+    
+  position: absolute;
+  left: 383px;
+  top: 0px;
+  width: 700px;
+  height: 900px;
+  margin-top: -293px;
   }
-  
+
   .exercise-card {
     width: 400px;
     height: 445px;
@@ -105,7 +113,7 @@
     text-decoration: none;
   }
   
-  @media screen and (max-width:1200px) {
+  /* @media screen and (max-width:1200px) {
     .detail-image {
       width: 300px;
       height: 300px;
