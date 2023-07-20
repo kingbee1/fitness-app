@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 
+
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 //import HorizontalScrollbar from "./HorizontalScrollbar";
 import { useState } from "react";
+import { exerciseOptions, fetchData } from "../utils/FetchData";
 
 const SearchExercises = () => {
   const [search, setSearch] = useState("");
@@ -12,8 +14,9 @@ const SearchExercises = () => {
     //check if search exists. 
     if(search) {
       //if the searhc exists, fetch exercise data.
-      // const exerciseData = await fetchData()
+      const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList/', exerciseOptions)
       //creating fetch data in utils folder only to keep this place tidy.
+      console.log({exerciseData})
     }
   }
 
