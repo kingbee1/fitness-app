@@ -40,7 +40,7 @@ const HeroBanner = () => {
       >
         Execise
       </Typography>
-      <img src={HeroBannerImg} alt="banner" className="hero-banner-img" />
+      {/* <img src={HeroBannerImg} alt="banner" className="hero-banner-img" /> */}
     </Box>
   );
 };

@@ -60,14 +60,14 @@ body {
     height: 900px;
     margin-top: -330px;
   } */
+  
   .hero-banner-img {
-    
   position: absolute;
   left: 383px;
   top: 0px;
   width: 700px;
   height: 900px;
-  margin-top: -293px;
+  margin-top: -330px;
   }
 
   .exercise-card {
