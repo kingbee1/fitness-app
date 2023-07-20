@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import HorizontalScrollbar from "./HorizontalScrollbar";
+//import HorizontalScrollbar from "./HorizontalScrollbar";
 import { useState } from "react";
 
 const SearchExercises = () => {
@@ -62,7 +62,7 @@ const SearchExercises = () => {
         </Button>
       </Box>
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
-        <HorizontalScrollbar />
+        {/* <HorizontalScrollbar /> */}
       </Box>
     </Stack>
   );
