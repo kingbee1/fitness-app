@@ -8,15 +8,36 @@ import { exerciseOptions, fetchData } from "../utils/FetchData";
 
 const SearchExercises = () => {
   const [search, setSearch] = useState("");
+  const [exercise, setExercise] = useState([]);
+  const [bodyParts, setBodyParts] = useState([]);
+
+  //a useeffect to fetch the categories as soon as the page loads.
+  useEffect(()=> {
+    const fetchExercisesData = async () => {
+      const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions)
+      //once we get the data, we set BodyParts to be all and then spread all the body oarts we got.
+      setBodyParts(['all', ...bodyPartsData])
+    }
+  }, [])
 
   //async because we have fetch data from api. meaning it will take time.
   const handleSearch = async () => {
     //check if search exists. 
     if(search) {
       //if the searhc exists, fetch exercise data.
-      const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList/', exerciseOptions)
+      const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/', exerciseOptions)
       //creating fetch data in utils folder only to keep this place tidy.
-      console.log({exerciseData})
+      //console.log(exerciseData)
+
+      const searchedExercise = exerciseData.filter((exercise) => exercise.name.toLowerCase().includes(search) 
+      || exercise.bodyPart.toLowerCase().includes(search)
+      || exercise.equipment.toLowerCase().includes(search)
+      || exercise.target.toLowerCase().includes(search) 
+      );
+      //first thing is to clear the search.
+      setSearch("")
+      //then set exercises to the searchd exercises.
+      setExercise(searchedExercise)
     }
   }
 
